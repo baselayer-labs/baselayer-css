@@ -1,0 +1,40 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Stretch link
+// -----------------------------------------------------------------------------
+
+$origin: map.get(core.$compiled-config, utilities, transform, origin);
+$rotate: map.get(core.$compiled-config, utilities, transform, rotate);
+$scale: map.get(core.$compiled-config, utilities, transform, scale);
+$skew: map.get(core.$compiled-config, utilities, transform, skew);
+$translate-x: map.get(core.$compiled-config, utilities, transform, translate-x);
+$translate-y: map.get(core.$compiled-config, utilities, transform, translate-y);
+$translate-z: map.get(core.$compiled-config, utilities, transform, translate-z);
+
+.#{core.$utility-prefix}transform {
+	--origin: #{$origin};
+	--rotate: #{$rotate};
+	--scale: #{$scale};
+	--skew: #{$skew};
+	--translate-x: #{$translate-x};
+	--translate-y: #{$translate-y};
+	--translate-z: #{$translate-z};
+
+	transform: rotate(var(--rotate)) scale(var(--scale)) skew(var(--skew)) translate3d(var(--translate-x), var(--translate-y), var(--translate-z));
+	transform-origin: var(--origin);
+
+	&:hover {
+		--hover-origin: var(--origin);
+		--hover-rotate: var(--rotate);
+		--hover-scale: var(--scale);
+		--hover-skew: var(--skew);
+		--hover-translate-x: var(--translate-x);
+		--hover-translate-y: var(--translate-y);
+		--hover-translate-z: var(--translate-z);
+		transform: rotate(var(--hover-rotate)) scale(var(--hover-scale)) skew(var(--hover-skew)) translate3d(var(--hover-translate-x), var(--hover-translate-y), var(--hover-translate-z));
+		transform-origin: var(--hover-origin);
+	}
+}
+

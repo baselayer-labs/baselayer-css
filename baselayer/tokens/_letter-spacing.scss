@@ -1,0 +1,19 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	tokens: (
+		letter-spacing: (
+			important: false,
+			responsive: false,
+			variables: false,
+			utility-name: tracking,
+			variable-name: null,
+			properties: (letter-spacing),
+			variants: (core.$merged-letter-spacing)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

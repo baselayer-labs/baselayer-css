@@ -1,0 +1,44 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Pin
+// -----------------------------------------------------------------------------
+
+.#{core.$layout-prefix}pin {
+	--position: static;
+	--top: auto;
+	--right: auto;
+	--bottom: auto;
+	--left: auto;
+	--z-index: 1;
+
+	position: var(--position);
+	top: var(--top);
+	right: var(--right);
+	bottom: var(--bottom);
+	left: var(--left);
+	z-index: var(--z-index);
+
+	@if (core.$merged-breakpoints != null) {
+		$prev-breakpoint: null;
+		@each $breakpoint in map.keys(core.$merged-breakpoints) {
+			@include core.media($breakpoint) {
+				--#{$breakpoint}-position: var(--#{$prev-breakpoint}position);
+				--#{$breakpoint}-top: var(--#{$prev-breakpoint}top);
+				--#{$breakpoint}-right: var(--#{$prev-breakpoint}right);
+				--#{$breakpoint}-bottom: var(--#{$prev-breakpoint}bottom);
+				--#{$breakpoint}-left: var(--#{$prev-breakpoint}left);
+				--#{$breakpoint}-z-index: var(--#{$prev-breakpoint}z-index);
+
+				position: var(--#{$breakpoint}-position);
+				top: var(--#{$breakpoint}-top);
+				right: var(--#{$breakpoint}-right);
+				bottom: var(--#{$breakpoint}-bottom);
+				left: var(--#{$breakpoint}-left);
+				z-index: var(--#{$breakpoint}-z-index);
+			}
+			$prev-breakpoint: #{$breakpoint}-;
+		}
+	}
+}

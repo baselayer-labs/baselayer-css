@@ -1,0 +1,88 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Grid
+// Build responsive grid systems with total layout freedom using one single
+// class and custom properties.
+// -----------------------------------------------------------------------------
+
+.#{core.$layout-prefix}grid {
+	--flow: row;
+	--auto-cols: auto;
+	--auto-rows: auto;
+	--cols: 1;
+	--cols-size: 1fr;
+	--align: normal;
+	--justify: normal;
+	--place: normal;
+	--gap: 0;
+
+	display: grid;
+	grid-auto-flow: var(--flow);
+	grid-auto-columns: var(--auto-cols);
+	grid-auto-rows: var(--auto-rows);
+	grid-template-columns: repeat(var(--cols), var(--cols-size));
+	align-items: var(--align);
+	justify-items: var(--justify);
+	place-content: var(--place);
+	gap: var(--gap);
+
+	> * {
+		--col: auto;
+		--row: auto;
+		--align: auto;
+		--justify: auto;
+		--order: 0;
+
+		min-width: 0;
+		max-width: 100%;
+		min-height: 0;
+		grid-column: var(--col);
+		grid-row: var(--row);
+		align-self: var(--align);
+		justify-self: var(--justify);
+		order: var(--order);
+	}
+
+	@if (core.$merged-breakpoints != null) {
+		$prev-breakpoint: null;
+		@each $breakpoint in map.keys(core.$merged-breakpoints) {
+			@include core.media($breakpoint) {
+				--#{$breakpoint}-flow: var(--#{$prev-breakpoint}flow);
+				--#{$breakpoint}-auto-cols: var(--#{$prev-breakpoint}auto-cols);
+				--#{$breakpoint}-auto-rows: var(--#{$prev-breakpoint}auto-rows);
+				--#{$breakpoint}-cols: var(--#{$prev-breakpoint}cols);
+				--#{$breakpoint}-cols-size: var(--#{$prev-breakpoint}cols-size);
+				--#{$breakpoint}-align: var(--#{$prev-breakpoint}align);
+				--#{$breakpoint}-justify: var(--#{$prev-breakpoint}justify);
+				--#{$breakpoint}-place: var(--#{$prev-breakpoint}place);
+				--#{$breakpoint}-gap: var(--#{$prev-breakpoint}gap);
+
+				grid-auto-flow: var(--#{$breakpoint}-flow);
+				grid-auto-columns: var(--#{$breakpoint}-auto-cols);
+				grid-auto-rows: var(--#{$breakpoint}-auto-rows);
+				grid-template-columns: repeat(var(--#{$breakpoint}-cols), var(--#{$breakpoint}-cols-size));
+				align-items: var(--#{$breakpoint}-align);
+				justify-items: var(--#{$breakpoint}-justify);
+				place-content: var(--#{$breakpoint}-place);
+				gap: var(--#{$breakpoint}-gap);
+
+				> * {
+					--#{$breakpoint}-col: var(--#{$prev-breakpoint}col);
+					--#{$breakpoint}-row: var(--#{$prev-breakpoint}row);
+					--#{$breakpoint}-align: var(--#{$prev-breakpoint}align);
+					--#{$breakpoint}-justify: var(--#{$prev-breakpoint}justify);
+					--#{$breakpoint}-order: var(--#{$prev-breakpoint}order);
+
+					grid-column: var(--#{$breakpoint}-col);
+					grid-row: var(--#{$breakpoint}-row);
+					align-self: var(--#{$breakpoint}-align);
+					justify-self: var(--#{$breakpoint}-justify);
+					order: var(--#{$breakpoint}-order);
+				}
+			}
+			$prev-breakpoint: #{$breakpoint}-;
+		}
+	}
+}

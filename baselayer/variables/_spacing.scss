@@ -1,0 +1,13 @@
+@use "../core";
+@use "sass:map";
+
+$config: (
+	variables: (
+		spacing: (
+			variable-name: space,
+			variants: (core.$merged-spacing)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

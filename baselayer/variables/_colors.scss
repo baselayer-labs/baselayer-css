@@ -1,0 +1,22 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	variables: (
+		colors: (
+			variable-name: color,
+			variants: (
+				functions.merge(
+					core.$merged-colors,
+					(
+						transparent: transparent,
+						current: currentcolor
+					)
+				)
+			)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

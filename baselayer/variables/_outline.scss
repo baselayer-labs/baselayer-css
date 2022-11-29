@@ -1,0 +1,13 @@
+@use "../core";
+@use "sass:map";
+
+$config: (
+	variables: (
+		outline: (
+			variable-name: outline,
+			variants: (core.$merged-outline)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

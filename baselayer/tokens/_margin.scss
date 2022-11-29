@@ -1,0 +1,135 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	tokens: (
+		margin: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin,
+			variable-name: space,
+			properties: (margin),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-top: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-top,
+			variable-name: space,
+			properties: (margin-top),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-right: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-right,
+			variable-name: space,
+			properties: (margin-right),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-bottom: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-bottom,
+			variable-name: space,
+			properties: (margin-bottom),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-left: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-left,
+			variable-name: space,
+			properties: (margin-left),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-x: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-x,
+			variable-name: space,
+			properties: (margin-right, margin-left),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		),
+
+		margin-y: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: margin-y,
+			variable-name: space,
+			properties: (margin-top, margin-bottom),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						auto: auto,
+						none: none
+					)
+				)
+			)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

@@ -1,0 +1,128 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	tokens: (
+		padding: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding,
+			variable-name: space,
+			properties: (padding),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-top: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-top,
+			variable-name: space,
+			properties: (padding-top),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-right: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-right,
+			variable-name: space,
+			properties: (padding-right),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-bottom: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-bottom,
+			variable-name: space,
+			properties: (padding-bottom),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-left: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-left,
+			variable-name: space,
+			properties: (padding-left),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-x: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-x,
+			variable-name: space,
+			properties: (padding-right, padding-left),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		),
+
+		padding-y: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: padding-y,
+			variable-name: space,
+			properties: (padding-top, padding-bottom),
+			variants: (
+				functions.merge(
+					core.$merged-spacing,
+					(
+						none: none
+					)
+				)
+			)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

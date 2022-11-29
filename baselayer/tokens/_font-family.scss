@@ -1,0 +1,19 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	tokens: (
+		font-family: (
+			important: false,
+			responsive: false,
+			variables: true,
+			utility-name: font,
+			variable-name: font,
+			properties: (font-family),
+			variants: (core.$merged-font-family)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);

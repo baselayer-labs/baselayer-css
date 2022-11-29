@@ -1,0 +1,17 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Truncate line
+// -----------------------------------------------------------------------------
+
+$truncate-line: map.get(core.$compiled-config, utilities, truncate-line);
+
+.#{core.$utility-prefix}truncate-line {
+	--truncate-line: #{$truncate-line};
+
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--truncate-line);
+}

@@ -1,0 +1,101 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:string';
+
+// -----------------------------------------------------------------------------
+// Sass functions
+// -----------------------------------------------------------------------------
+
+// Escape
+// -----------------------------------------------------------------------------
+
+@function escape($any) {
+	$escape-chars: (
+		"#", "$", "(", ")", "+", ".", ":", "=", "@", "[", "]", "{", "|", "}"
+	);
+	$string: '' + $any;
+	$escaped-string: '';
+	@for $x from 1 through string.length($string) {
+		$character: string.slice($string, $x, $x);
+		@if list.index($escape-chars, $character) {
+			$escaped-string: $escaped-string + '\\' + $character;
+		} @else {
+			$escaped-string: $escaped-string + $character;
+		}
+	}
+	@return $escaped-string;
+}
+
+// Fluid size
+// Clamps a value between an upper and lower bound.
+// @param {Value} $min-value - Min value to clamp from
+// @param {Value} $max-value - Max value to clamp to
+// @param {Value} $min-vw - Start flow from this viewport width
+// @param {Value} $max-vw - Stop flow at this viewport width
+// @return {Value} - Fluid value with upper and lower bound
+// -----------------------------------------------------------------------------
+
+@function fluid-size($min-value, $max-value, $min-vw: 30rem, $max-vw: 120rem) {
+	$factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
+	$calc-value: calc(#{$min-value - ($min-vw * $factor)} + #{100vw * $factor});
+	@return clamp(
+		#{if($min-value > $max-value, $max-value, $min-value)},
+		#{$calc-value},
+		#{if($min-value > $max-value, $min-value, $max-value)}
+	);
+}
+
+// Map sort
+// -----------------------------------------------------------------------------
+
+@function map-sort($map) {
+	// Transform the map to a zipped list
+	$keys: ();
+	$values: ();
+	@each $key, $value in $map {
+		$keys: append($keys, $key);
+		$values: append($values, $value);
+	}
+	$list: zip($keys, $values);
+	$sorted-map: ();
+	@while (length($list) > 0) {
+		// Find the smallest pair
+		$smallest-pair: nth($list, 1);
+		@each $pair in $list {
+			$value: nth($pair, 2);
+			$smallest-value: nth($smallest-pair, 2);
+			@if ($value < $smallest-value) {
+				$smallest-pair: $pair;
+			}
+		}
+
+		// Add the smallest pair to the sorted map
+		$key: nth($smallest-pair, 1);
+		$value: nth($smallest-pair, 2);
+		$sorted-map: map.merge($sorted-map, ($key: $value));
+
+		// Remove the smallest pair from the list
+		$smallest-pair-index: index($list, $smallest-pair);
+		$new-list: ();
+		@for $index from 1 through length($list) {
+			@if ($index != $smallest-pair-index) {
+				$new-list: append($new-list, nth($list, $index), 'space');
+			}
+		}
+		$list: $new-list;
+	}
+	@return $sorted-map;
+}
+
+// Merge
+// Multiple map merge function
+// -----------------------------------------------------------------------------
+
+@function merge($maps...) {
+	$collection: ();
+	@each $map in $maps {
+		$collection: map.merge($collection, $map);
+	}
+	@return $collection;
+}

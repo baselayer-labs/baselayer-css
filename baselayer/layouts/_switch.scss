@@ -1,0 +1,39 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Switch
+// Switch from a single column to a multi column layout when the width of the
+// parent element is equal the breakpoint.
+//
+// 1. Needs a unit so the calculation for the min-width does not break.
+// 2. Multiply the switch flag by an arbitrarily large value to scale it to
+//    either very negative or very positive and apply it as the flex-basis.
+// 3. Prevent a Firefox bug with vw-unit when used together with --gap
+// -----------------------------------------------------------------------------
+
+.#{core.$layout-prefix}switch {
+	--breakpoint: 0;
+	--cols: 1;
+	--gap: 0rem; // 1
+	--multiplier: 9999; // 2
+	--trim: 0.001%; // 3
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+
+	> * {
+		--col: var(--cols);
+		--grow: 0;
+		--basis: calc((var(--breakpoint) - 100%) * var(--multiplier));
+		--gap-width: calc(var(--col-gap, var(--gap)) / var(--col));
+		--num-gaps: calc(var(--col) - 1);
+		--min-width: calc(100% / var(--col) - (var(--num-gaps) * var(--gap-width)) - var(--trim));
+
+		flex-grow: var(--grow);
+		flex-basis: var(--basis);
+		min-width: var(--min-width);
+		max-width: 100%;
+	}
+}
