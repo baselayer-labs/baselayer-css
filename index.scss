@@ -1,0 +1,13 @@
+// Load Baselayer core functions
+@use 'baselayer/core/functions';
+
+// Load and configure Baselayer
+@use 'baselayer' as * with (
+	$config: (
+		theme: (),
+		layouts: (),
+		tokens: (),
+		utilities: (),
+		variables: ()
+	)
+);
