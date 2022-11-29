@@ -1,0 +1,20 @@
+{
+  "name": "baselayer-css",
+  "description": "Baselayer CSS is a styling toolkit to facilitate the development of user interfaces.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "sass index.scss dist/baselayer.css --no-source-map --style expanded",
+    "build": "sass index.scss dist/baselayer.min.css --no-source-map --style compressed",
+    "watch": "npm run dev & npm run dev -- --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.43.2"
+  },
+  "files": [
+    "dist/*.{css}",
+    "**/*.scss",
+    "package.json",
+    "README.md"
+  ]
+}
