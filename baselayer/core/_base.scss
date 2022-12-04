@@ -33,6 +33,7 @@ html {
 // 2. Improve text rendering
 // 3. Prevent adjustments of font size after orientation changes in iOS
 body {
+	font-family: var(--font-sans);
 	line-height: 1.5; // 1
 	text-rendering: optimizeSpeed; // 2
 	-moz-osx-font-smoothing: grayscale; // 2
