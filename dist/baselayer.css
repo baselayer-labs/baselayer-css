@@ -36,6 +36,7 @@ html {
 }
 
 body {
+  font-family: var(--font-sans);
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   -moz-osx-font-smoothing: grayscale;
@@ -644,17 +645,6 @@ fieldset {
   --translate-z: 0;
   transform: rotate(var(--rotate)) scale(var(--scale)) skew(var(--skew)) translate3d(var(--translate-x), var(--translate-y), var(--translate-z));
   transform-origin: var(--origin);
-}
-.transform:hover {
-  --hover-origin: var(--origin);
-  --hover-rotate: var(--rotate);
-  --hover-scale: var(--scale);
-  --hover-skew: var(--skew);
-  --hover-translate-x: var(--translate-x);
-  --hover-translate-y: var(--translate-y);
-  --hover-translate-z: var(--translate-z);
-  transform: rotate(var(--hover-rotate)) scale(var(--hover-scale)) skew(var(--hover-skew)) translate3d(var(--hover-translate-x), var(--hover-translate-y), var(--hover-translate-z));
-  transform-origin: var(--hover-origin);
 }
 
 .transition {
