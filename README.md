@@ -220,6 +220,38 @@ Build responsive grid systems with total layout freedom using one single class a
 </div>
 ```
 
+#### Pin
+
+Control how an element is positioned in the DOM and its placement, as well as which z-index layer to use.
+
+```scss
+// Default settings
+.layout-pin {
+  --position: static;
+  --top: auto;
+  --right: auto;
+  --bottom: auto;
+  --left: auto;
+  --z-index: 1;
+}
+```
+
+```html
+<!-- Make an element sticky -->
+<div class="layout-pin" style="--position: sticky; --top: 0; --z-index: 200;">
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+</div>
+
+<!-- Make an element full size relative to its closest parent with relative position -->
+<div class="layout-pin" style="--position: relative;">
+  <div class="layout-pin" style="--position: absolute; --top: 0; --right: 0; --bottom: 0; --left: 0;">...</div>
+  <div>...</div>
+  <div>...</div>
+</div>
+```
+
 #### Switch
 
 Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column, you need to define `--col-gap` to get the correct column width.
