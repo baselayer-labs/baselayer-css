@@ -16,8 +16,7 @@ $default-config: (
   responsive: false,
   delimiter: '-',
   breakpoint-delimiter: '-',
-  utility-prefix: null,
-  layout-prefix: 'layout-',
+	prefix: null,
 
   theme: (
     reset: (
@@ -98,7 +97,7 @@ $default-config: (
     ),
   ),
 
-  utilities: (
+  functions: (
     stretch-link: (
       z-index: 1
     ),
@@ -133,8 +132,7 @@ $compiled-config: map.deep-merge($default-config, $config);
 
 $is-all-important: map.get($compiled-config, important);
 $is-all-responsive: map.get($compiled-config, responsive);
-$layout-prefix: map.get($compiled-config, layout-prefix);
-$utility-prefix: map.get($compiled-config, utility-prefix);
+$prefix: map.get($compiled-config, prefix);
 $breakpoint-delimiter: functions.escape(map.get($compiled-config, breakpoint-delimiter));
 $delimiter: map.get($compiled-config, delimiter);
 $breakpoints: map.get($compiled-config, theme, breakpoints);
@@ -251,8 +249,8 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
 }
 
 // Generate utility classes
-// Loop each item in the $utilities object and create matching utility classes.
-// @param {Map} $data - Config object with settings and utilities map
+// Loop each item in the $tokens object and create matching utility classes.
+// @param {Map} $data - Config object with settings and tokens map
 // -----------------------------------------------------------------------------
 
 @mixin generate-classes($data) {
@@ -274,9 +272,9 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
     }
     @each $key, $value in $variants {
       @if ($key == custom) {
-        $class-name: #{$utility-prefix}#{$value}#{$delimiter}#{'' + $key};
+        $class-name: #{$prefix}#{$value}#{$delimiter}#{'' + $key};
       } @else {
-        $class-name: #{$utility-prefix}#{$utility-name}#{$delimiter}#{'' + $key};
+        $class-name: #{$prefix}#{$utility-name}#{$delimiter}#{'' + $key};
       }
       .#{$class-name} {
         @if ($key == custom) {
@@ -318,7 +316,7 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
         @if ($is-responsive == true or $is-all-responsive == true and not $key == custom) {
           @each $breakpoint in map.keys($merged-breakpoints) {
             @include media($breakpoint) {
-              $namespace: #{$utility-prefix}#{$breakpoint}#{$breakpoint-delimiter};
+              $namespace: #{$prefix}#{$breakpoint}#{$breakpoint-delimiter};
               .#{$namespace}#{$utility-name}#{$delimiter}#{'' + $key} {
                 @each $property in $properties {
                   @if ($has-variables == true and not
