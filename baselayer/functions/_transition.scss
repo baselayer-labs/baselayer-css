@@ -5,12 +5,12 @@
 // Transition
 // -----------------------------------------------------------------------------
 
-$property: map.get(core.$compiled-config, utilities, transition, property);
-$duration: map.get(core.$compiled-config, utilities, transition, duration);
-$delay: map.get(core.$compiled-config, utilities, transition, delay);
-$easing: map.get(core.$compiled-config, utilities, transition, easing);
+$property: map.get(core.$compiled-config, functions, transition, property);
+$duration: map.get(core.$compiled-config, functions, transition, duration);
+$delay: map.get(core.$compiled-config, functions, transition, delay);
+$easing: map.get(core.$compiled-config, functions, transition, easing);
 
-.#{core.$utility-prefix}transition {
+.#{core.$prefix}transition {
 	--property: #{$property};
 	--duration: #{$duration};
 	--delay: #{$delay};

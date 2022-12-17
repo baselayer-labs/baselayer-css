@@ -5,9 +5,9 @@
 // Truncate line
 // -----------------------------------------------------------------------------
 
-$truncate-line: map.get(core.$compiled-config, utilities, truncate-line);
+$truncate-line: map.get(core.$compiled-config, functions, truncate-line);
 
-.#{core.$utility-prefix}truncate-line {
+.#{core.$prefix}truncate-line {
 	--truncate-line: #{$truncate-line};
 
 	display: -webkit-box;

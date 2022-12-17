@@ -5,15 +5,15 @@
 // Transform
 // -----------------------------------------------------------------------------
 
-$origin: map.get(core.$compiled-config, utilities, transform, origin);
-$rotate: map.get(core.$compiled-config, utilities, transform, rotate);
-$scale: map.get(core.$compiled-config, utilities, transform, scale);
-$skew: map.get(core.$compiled-config, utilities, transform, skew);
-$translate-x: map.get(core.$compiled-config, utilities, transform, translate-x);
-$translate-y: map.get(core.$compiled-config, utilities, transform, translate-y);
-$translate-z: map.get(core.$compiled-config, utilities, transform, translate-z);
+$origin: map.get(core.$compiled-config, functions, transform, origin);
+$rotate: map.get(core.$compiled-config, functions, transform, rotate);
+$scale: map.get(core.$compiled-config, functions, transform, scale);
+$skew: map.get(core.$compiled-config, functions, transform, skew);
+$translate-x: map.get(core.$compiled-config, functions, transform, translate-x);
+$translate-y: map.get(core.$compiled-config, functions, transform, translate-y);
+$translate-z: map.get(core.$compiled-config, functions, transform, translate-z);
 
-.#{core.$utility-prefix}transform {
+.#{core.$prefix}transform {
 	--origin: #{$origin};
 	--rotate: #{$rotate};
 	--scale: #{$scale};

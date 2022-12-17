@@ -322,11 +322,6 @@ Wrap and align content with padding.
 
 Will be updated soon.
 
-### Utilities
+### Functions
 
 Will be updated soon.
-
-## Roadmap
-
-- Add Baselayer CSS to NPM
-- Add config for Purge CSS
