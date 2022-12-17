@@ -12,7 +12,7 @@
 // 3. Prevent a Firefox bug with vw-unit when used together with --gap
 // -----------------------------------------------------------------------------
 
-.#{core.$layout-prefix}switch {
+.#{core.$prefix}layout-switch {
 	--breakpoint: 0;
 	--cols: 1;
 	--gap: 0rem; // 1

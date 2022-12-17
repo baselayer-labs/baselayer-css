@@ -11,7 +11,7 @@ $margin-right: map.get(core.$compiled-config, layouts, wrap, margin-right);
 $margin-left: map.get(core.$compiled-config, layouts, wrap, margin-left);
 $padding: map.get(core.$compiled-config, layouts, wrap, padding);
 
-.#{core.$layout-prefix}wrap {
+.#{core.$prefix}layout-wrap {
 	--width: calc(100% - var(--padding));
 	--max-width: #{$max-width};
 	--margin-right: #{$margin-right};

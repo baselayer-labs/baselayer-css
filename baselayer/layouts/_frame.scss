@@ -12,7 +12,7 @@ $object-y: map.get(core.$compiled-config, layouts, frame, object-y);
 $object-fit: map.get(core.$compiled-config, layouts, frame, object-fit);
 $ratio: map.get(core.$compiled-config, layouts, frame, ratio);
 
-.#{core.$layout-prefix}frame {
+.#{core.$prefix}layout-frame {
 	--object-x: #{$object-x};
 	--object-y: #{$object-y};
 	--object-fit: #{$object-fit};
