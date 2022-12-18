@@ -12,112 +12,115 @@ $config: () !default;
 // -----------------------------------------------------------------------------
 
 $default-config: (
-  important: false,
-  responsive: false,
-  delimiter: '-',
-  breakpoint-delimiter: '-',
+	important: false,
+	responsive: false,
+	delimiter: '-',
+	breakpoint-delimiter: '-',
 	prefix: null,
 
-  theme: (
-    reset: (
-      breakpoints: (),
-      colors: (),
-      font-family: (),
-      font-size: (),
-      font-weight: (),
-      letter-spacing: (),
-      line-height: (),
-      outline: (),
-      spacing: ()
-    ),
+	theme: (
+		reset: (
+			breakpoints: (),
+			colors: (),
+			font-family: (),
+			font-size: (),
+			font-weight: (),
+			letter-spacing: (),
+			line-height: (),
+			outline: (),
+			spacing: ()
+		),
 
-    breakpoints: (
-      sm: 30em,
-      md: 60em,
-      lg: 90em
-    ),
-    colors: (
-      white: #ffffff,
-      black: #000000
-  	),
-    font-family: (
-      sans: 'system-ui, sans-serif',
-      serif: 'serif',
-      mono: 'monospace'
-    ),
-    font-size: (
-      nano: 0.75rem,
-      tiny: 1rem,
-      small: 1.5rem,
-      medium: 2rem,
-      large: 4rem,
-      mega: 6rem
-    ),
-    font-weight: (
-      thin: 300,
-      regular: 400,
-      bold: 700
-    ),
-    letter-spacing: (
-      narrow: -0.025em,
-      wide: 0.025em
-    ),
-    line-height: (
-      none: 1,
-      tight: 1.25,
-      loose: 2
-    ),
-    outline: (
-      width: 0.125rem,
-      type: solid,
-      color: currentcolor
-    ),
-    spacing: (
-      nano: 0.5rem,
-      tiny: 1rem,
-      small: 1.5rem,
-      medium: 2rem,
-      large: 4rem,
-      mega: 8rem
-    )
-  ),
+		breakpoints: (
+			sm: 30em,
+			md: 60em,
+			lg: 90em
+		),
+		colors: (
+			white: #ffffff,
+			black: #000000
+		),
+		font-family: (
+			sans: 'system-ui, sans-serif',
+			serif: 'serif',
+			mono: 'monospace'
+		),
+		font-size: (
+			nano: 0.75rem,
+			tiny: 1rem,
+			small: 1.5rem,
+			medium: 2rem,
+			large: 4rem,
+			mega: 6rem
+		),
+		font-weight: (
+			thin: 300,
+			regular: 400,
+			bold: 700
+		),
+		letter-spacing: (
+			narrow: -0.025em,
+			wide: 0.025em
+		),
+		line-height: (
+			none: 1,
+			tight: 1.25,
+			loose: 2
+		),
+		outline: (
+			width: 0.125rem,
+			type: solid,
+			color: currentcolor
+		),
+		spacing: (
+			nano: 0.5rem,
+			tiny: 1rem,
+			small: 1.5rem,
+			medium: 2rem,
+			large: 4rem,
+			mega: 8rem
+		)
+	),
 
-  layouts: (
-    frame: (
-      object-x: 50%,
-      object-y: 50%,
-      object-fit: cover,
-      ratio: '1/1'
-    ),
-    wrap: (
-      max-width: 80rem,
-      margin-right: auto,
-      margin-left: auto,
-      padding: clamp(2rem, 10vw, 4rem)
-    ),
-  ),
+	layouts: (
+		flow: (
+			space: var(--space-small)
+		),
+		frame: (
+			object-x: 50%,
+			object-y: 50%,
+			object-fit: cover,
+			ratio: '1/1'
+		),
+		wrap: (
+			max-width: 80rem,
+			margin-right: auto,
+			margin-left: auto,
+			padding: clamp(2rem, 10vw, 4rem)
+		),
+	),
 
-  functions: (
-    stretch-link: (
-      z-index: 1
-    ),
-    transform: (
-      origin: center,
-      rotate: 0deg,
-      scale: 1,
-      skew: 0deg,
-      translate-x: 0,
-    	translate-y: 0,
-      translate-z: 0
-    ),
-    transition: (
-      property: all,
-      duration: 200ms,
-      delay: 0ms,
-      easing: cubic-bezier(0.5, 0, 0.25, 1)
-    ),
-    truncate-line: 1
-  )
+	functions: (
+		stretch-link: (
+			z-index: 1
+		),
+		transform: (
+			origin: center,
+			rotate: 0deg,
+			scale: 1,
+			skew: 0deg,
+			translate-x: 0,
+			translate-y: 0,
+			translate-z: 0
+		),
+		transition: (
+			property: all,
+			duration: 200ms,
+			delay: 0ms,
+			easing: cubic-bezier(0.5, 0, 0.25, 1)
+		),
+		truncate-line: 1
+	)
 ) !default;
 
 // -----------------------------------------------------------------------------
@@ -159,55 +162,55 @@ $reset-spacing: map.get($compiled-config, theme, reset, spacing);
 // Merged data
 $merged-breakpoints: ();
 @if ($breakpoints != null) {
-  $merged-breakpoints: functions.map-sort(map.deep-merge($merged-breakpoints, $breakpoints));
+	$merged-breakpoints: functions.map-sort(map.deep-merge($merged-breakpoints, $breakpoints));
 }
 $merged-breakpoints: functions.map-sort(map.deep-merge($merged-breakpoints, $reset-breakpoints));
 
 $merged-colors: ();
 @if ($colors != null) {
-  $merged-colors: map.deep-merge($merged-colors, $colors);
+	$merged-colors: map.deep-merge($merged-colors, $colors);
 }
 $merged-colors: map.deep-merge($merged-colors, $reset-colors);
 
 $merged-font-family: ();
 @if ($font-family != null) {
-  $merged-font-family: map.deep-merge($merged-font-family, $font-family);
+	$merged-font-family: map.deep-merge($merged-font-family, $font-family);
 }
 $merged-font-family: map.deep-merge($merged-font-family, $reset-font-family);
 
 $merged-font-size: ();
 @if ($font-size != null) {
-  $merged-font-size: map.deep-merge($merged-font-size, $font-size);
+	$merged-font-size: map.deep-merge($merged-font-size, $font-size);
 }
 $merged-font-size: map.deep-merge($merged-font-size, $reset-font-size);
 
 $merged-font-weight: ();
 @if ($font-weight != null) {
-  $merged-font-weight: map.deep-merge($merged-font-weight, $font-weight);
+	$merged-font-weight: map.deep-merge($merged-font-weight, $font-weight);
 }
 $merged-font-weight: map.deep-merge($merged-font-weight, $reset-font-weight);
 
 $merged-letter-spacing: ();
 @if ($letter-spacing != null) {
-  $merged-letter-spacing: map.deep-merge($merged-letter-spacing, $letter-spacing);
+	$merged-letter-spacing: map.deep-merge($merged-letter-spacing, $letter-spacing);
 }
 $merged-letter-spacing: map.deep-merge($merged-letter-spacing, $reset-letter-spacing);
 
 $merged-line-height: ();
 @if ($line-height != null) {
-  $merged-line-height: map.deep-merge($merged-line-height, $line-height);
+	$merged-line-height: map.deep-merge($merged-line-height, $line-height);
 }
 $merged-line-height: map.deep-merge($merged-line-height, $reset-line-height);
 
 $merged-outline: ();
 @if ($outline != null) {
-  $merged-outline: map.deep-merge($merged-outline, $outline);
+	$merged-outline: map.deep-merge($merged-outline, $outline);
 }
 $merged-outline: map.deep-merge($merged-outline, $reset-outline);
 
 $merged-spacing: ();
 @if ($spacing != null) {
-  $merged-spacing: map.deep-merge($merged-spacing, $spacing);
+	$merged-spacing: map.deep-merge($merged-spacing, $spacing);
 }
 $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
 
@@ -222,14 +225,14 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
 // -----------------------------------------------------------------------------
 
 @mixin media($size, $type: min) {
-  @if map.has-key($merged-breakpoints, $size) {
-    $size: map.get($merged-breakpoints, $size);
-  } @else {
-    $size: $size;
-  }
-  @media (#{$type}-width: $size) {
-    @content;
-  }
+	@if map.has-key($merged-breakpoints, $size) {
+		$size: map.get($merged-breakpoints, $size);
+	} @else {
+		$size: $size;
+	}
+	@media (#{$type}-width: $size) {
+		@content;
+	}
 }
 
 // Generate variables
@@ -238,14 +241,14 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
 // -----------------------------------------------------------------------------
 
 @mixin generate-variables($data) {
-  $variables: map.get($data, variables);
-  @each $id, $collection in $variables {
-    $variable-name: map.get($collection, 'variable-name');
-    $variants: map.get($collection, 'variants');
-    @each $key, $value in $variants {
-      --#{$variable-name}-#{'' + $key}: #{$value};
-    }
-  }
+	$variables: map.get($data, variables);
+	@each $id, $collection in $variables {
+		$variable-name: map.get($collection, 'variable-name');
+		$variants: map.get($collection, 'variants');
+		@each $key, $value in $variants {
+			--#{$variable-name}-#{'' + $key}: #{$value};
+		}
+	}
 }
 
 // Generate utility classes
@@ -254,89 +257,89 @@ $merged-spacing: map.deep-merge($merged-spacing, $reset-spacing);
 // -----------------------------------------------------------------------------
 
 @mixin generate-classes($data) {
-  $tokens: map.get($data, tokens);
-  @each $id, $collection in $tokens {
-    $is-important: map.get($collection, 'important');
-    $is-responsive: map.get($collection, 'responsive');
-    $has-variables: map.get($collection, 'variables');
-    $utility-name: map.get($collection, 'utility-name');
-    $variable-name: map.get($collection, 'variable-name');
-    $variants: map.get($collection, 'variants');
-    $properties: map.get($collection, 'properties');
-    $important: null;
-    $class-name: null;
-    @if ($is-important == true or $is-all-important == true) {
-      $important: '!important';
-    } @else {
-      $important: null;
-    }
-    @each $key, $value in $variants {
-      @if ($key == custom) {
-        $class-name: #{$prefix}#{$value}#{$delimiter}#{'' + $key};
-      } @else {
-        $class-name: #{$prefix}#{$utility-name}#{$delimiter}#{'' + $key};
-      }
-      .#{$class-name} {
-        @if ($key == custom) {
-          @each $property in $properties {
-            #{$property}: var(--#{'' + $value}) #{$important};
-          }
-          @if ($merged-breakpoints != null) {
-            $prev-breakpoint: null;
-            @each $breakpoint in map.keys($merged-breakpoints) {
-              @include media($breakpoint) {
-                --#{$breakpoint}-#{"" + $value}: var(
-                  --#{$prev-breakpoint}#{'' + $value}
-                );
-                @each $property in $properties {
-                  #{$property}: var(--#{$breakpoint}-#{'' + $value}) #{$important};
-                }
-              }
-              $prev-breakpoint: #{$breakpoint}-;
-            }
-          }
-        } @else {
-          @each $property in $properties {
-            @if ($has-variables == true and not
-              (
-                $key == transparent or
-                $key == current or
-                $key == auto or
-                $key == none
-              )
-            ) {
-              #{$property}: var(--#{$variable-name}-#{'' + $key}) #{$important};
-            } @else {
-              #{$property}: $value #{$important};
-            }
-          }
-        }
-      }
-      @if ($merged-breakpoints != null) {
-        @if ($is-responsive == true or $is-all-responsive == true and not $key == custom) {
-          @each $breakpoint in map.keys($merged-breakpoints) {
-            @include media($breakpoint) {
-              $namespace: #{$prefix}#{$breakpoint}#{$breakpoint-delimiter};
-              .#{$namespace}#{$utility-name}#{$delimiter}#{'' + $key} {
-                @each $property in $properties {
-                  @if ($has-variables == true and not
-                    (
-                      $key == transparent or
-                      $key == current or
-                      $key == auto or
-                      $key == none
-                    )
-                  ) {
-                    #{$property}: var(--#{$variable-name}-#{'' + $key}) #{$important};
-                  } @else {
-                    #{$property}: $value #{$important};
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+	$tokens: map.get($data, tokens);
+	@each $id, $collection in $tokens {
+		$is-important: map.get($collection, 'important');
+		$is-responsive: map.get($collection, 'responsive');
+		$has-variables: map.get($collection, 'variables');
+		$utility-name: map.get($collection, 'utility-name');
+		$variable-name: map.get($collection, 'variable-name');
+		$variants: map.get($collection, 'variants');
+		$properties: map.get($collection, 'properties');
+		$important: null;
+		$class-name: null;
+		@if ($is-important == true or $is-all-important == true) {
+			$important: '!important';
+		} @else {
+			$important: null;
+		}
+		@each $key, $value in $variants {
+			@if ($key == custom) {
+				$class-name: #{$prefix}#{$value}#{$delimiter}#{'' + $key};
+			} @else {
+				$class-name: #{$prefix}#{$utility-name}#{$delimiter}#{'' + $key};
+			}
+			.#{$class-name} {
+				@if ($key == custom) {
+					@each $property in $properties {
+						#{$property}: var(--#{'' + $value}) #{$important};
+					}
+					@if ($merged-breakpoints != null) {
+						$prev-breakpoint: null;
+						@each $breakpoint in map.keys($merged-breakpoints) {
+							@include media($breakpoint) {
+								--#{$breakpoint}-#{"" + $value}: var(
+									--#{$prev-breakpoint}#{'' + $value}
+								);
+								@each $property in $properties {
+									#{$property}: var(--#{$breakpoint}-#{'' + $value}) #{$important};
+								}
+							}
+							$prev-breakpoint: #{$breakpoint}-;
+						}
+					}
+				} @else {
+					@each $property in $properties {
+						@if ($has-variables == true and not
+							(
+								$key == transparent or
+								$key == current or
+								$key == auto or
+								$key == none
+							)
+						) {
+							#{$property}: var(--#{$variable-name}-#{'' + $key}) #{$important};
+						} @else {
+							#{$property}: $value #{$important};
+						}
+					}
+				}
+			}
+			@if ($merged-breakpoints != null) {
+				@if ($is-responsive == true or $is-all-responsive == true and not $key == custom) {
+					@each $breakpoint in map.keys($merged-breakpoints) {
+						@include media($breakpoint) {
+							$namespace: #{$prefix}#{$breakpoint}#{$breakpoint-delimiter};
+							.#{$namespace}#{$utility-name}#{$delimiter}#{'' + $key} {
+								@each $property in $properties {
+									@if ($has-variables == true and not
+										(
+											$key == transparent or
+											$key == current or
+											$key == auto or
+											$key == none
+										)
+									) {
+										#{$property}: var(--#{$variable-name}-#{'' + $key}) #{$important};
+									} @else {
+										#{$property}: $value #{$important};
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
