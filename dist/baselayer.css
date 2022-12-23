@@ -280,7 +280,7 @@ fieldset {
 }
 
 .layout-flow {
-  --space: var(--space-small);
+  --space: var(--space-large);
 }
 .layout-flow > * + * {
   margin-top: var(--space);
