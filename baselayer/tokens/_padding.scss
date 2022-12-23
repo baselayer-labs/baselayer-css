@@ -7,9 +7,8 @@ $config: (
 		padding: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding,
-			variable-name: space,
+			shorthand: padding,
+			variable: space,
 			properties: (padding),
 			variants: (
 				functions.merge(
@@ -24,9 +23,8 @@ $config: (
 		padding-top: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-top,
-			variable-name: space,
+			shorthand: padding-top,
+			variable: space,
 			properties: (padding-top),
 			variants: (
 				functions.merge(
@@ -41,9 +39,8 @@ $config: (
 		padding-right: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-right,
-			variable-name: space,
+			shorthand: padding-right,
+			variable: space,
 			properties: (padding-right),
 			variants: (
 				functions.merge(
@@ -58,9 +55,8 @@ $config: (
 		padding-bottom: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-bottom,
-			variable-name: space,
+			shorthand: padding-bottom,
+			variable: space,
 			properties: (padding-bottom),
 			variants: (
 				functions.merge(
@@ -75,9 +71,8 @@ $config: (
 		padding-left: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-left,
-			variable-name: space,
+			shorthand: padding-left,
+			variable: space,
 			properties: (padding-left),
 			variants: (
 				functions.merge(
@@ -92,9 +87,8 @@ $config: (
 		padding-x: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-x,
-			variable-name: space,
+			shorthand: padding-x,
+			variable: space,
 			properties: (padding-right, padding-left),
 			variants: (
 				functions.merge(
@@ -109,9 +103,8 @@ $config: (
 		padding-y: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: padding-y,
-			variable-name: space,
+			shorthand: padding-y,
+			variable: space,
 			properties: (padding-top, padding-bottom),
 			variants: (
 				functions.merge(

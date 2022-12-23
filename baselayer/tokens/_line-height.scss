@@ -7,9 +7,8 @@ $config: (
 		line-height: (
 			important: false,
 			responsive: false,
-			variables: false,
-			utility-name: leading,
-			variable-name: null,
+			shorthand: leading,
+			variable: leading,
 			properties: (line-height),
 			variants: (core.$merged-line-height)
 		)

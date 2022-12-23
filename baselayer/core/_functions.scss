@@ -38,7 +38,7 @@
 
 @function fluid-size($min-value, $max-value, $min-vw: 30rem, $max-vw: 120rem) {
 	$factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
-	$calc-value: calc(#{$min-value - ($min-vw * $factor)} + #{100vw * $factor});
+	$calc-value: calc(#{$min-value - ($min-vw * $factor)} + #{100vmin * $factor});
 	@return clamp(
 		#{if($min-value > $max-value, $max-value, $min-value)},
 		#{$calc-value},

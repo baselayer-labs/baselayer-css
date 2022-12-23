@@ -7,9 +7,8 @@ $config: (
 		background-color: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: color-background,
-			variable-name: color,
+			shorthand: color-background,
+			variable: color,
 			properties: (background-color),
 			variants: (
 				functions.merge(

@@ -12,6 +12,14 @@
   --text-medium: 2rem;
   --text-large: 4rem;
   --text-mega: 6rem;
+  --font-thin: 300;
+  --font-regular: 400;
+  --font-bold: 700;
+  --tracking-narrow: -0.025em;
+  --tracking-wide: 0.025em;
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-loose: 2;
   --outline-width: 0.125rem;
   --outline-type: solid;
   --outline-color: currentcolor;
@@ -735,23 +743,23 @@ fieldset {
 }
 
 .font-thin {
-  font-weight: 300;
+  font-weight: var(--font-thin);
 }
 
 .font-regular {
-  font-weight: 400;
+  font-weight: var(--font-regular);
 }
 
 .font-bold {
-  font-weight: 700;
+  font-weight: var(--font-bold);
 }
 
 .tracking-narrow {
-  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-narrow);
 }
 
 .tracking-wide {
-  letter-spacing: 0.025em;
+  letter-spacing: var(--tracking-wide);
 }
 
 .leading-none {
@@ -759,11 +767,11 @@ fieldset {
 }
 
 .leading-tight {
-  line-height: 1.25;
+  line-height: var(--leading-tight);
 }
 
 .leading-loose {
-  line-height: 2;
+  line-height: var(--leading-loose);
 }
 
 .margin-nano {

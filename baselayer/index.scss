@@ -28,3 +28,4 @@
 
 // $config: map.deep-merge(core.$compiled-config, core.$config);
 @include core.generate-classes(core.$compiled-config);
+

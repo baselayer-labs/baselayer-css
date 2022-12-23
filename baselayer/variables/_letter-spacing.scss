@@ -4,9 +4,9 @@
 
 $config: (
 	variables: (
-		font-family: (
-			variable: font,
-			variants: (core.$merged-font-family)
+		letter-spacing: (
+			variable: tracking,
+			variants: (core.$merged-letter-spacing)
 		)
 	)
 );
