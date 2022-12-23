@@ -1,0 +1,14 @@
+@use "../core";
+@use "../core/functions";
+@use "sass:map";
+
+$config: (
+	variables: (
+		line-height: (
+			variable: leading,
+			variants: (core.$merged-line-height)
+		)
+	)
+);
+
+core.$compiled-config: map.deep-merge(core.$compiled-config, $config);
