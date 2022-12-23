@@ -1,0 +1,17 @@
+@use "../core";
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Flow
+// Flow controls vertical spacing.
+// -----------------------------------------------------------------------------
+
+$space: map.get(core.$compiled-config, layouts, flow, space);
+
+.#{core.$prefix}layout-flow {
+	--space: #{$space};
+
+	> * + * {
+		margin-top: var(--space);
+	}
+}

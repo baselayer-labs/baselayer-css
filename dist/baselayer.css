@@ -279,6 +279,13 @@ fieldset {
   }
 }
 
+.layout-flow {
+  --space: var(--space-small);
+}
+.layout-flow > * + * {
+  margin-top: var(--space);
+}
+
 .layout-frame {
   --object-x: 50%;
   --object-y: 50%;

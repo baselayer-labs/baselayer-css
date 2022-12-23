@@ -83,6 +83,9 @@ $default-config: (
 	),
 
 	layouts: (
+		flow: (
+			space: var(--space-large)
+		),
 		frame: (
 			object-x: 50%,
 			object-y: 50%,
