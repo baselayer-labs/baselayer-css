@@ -7,9 +7,8 @@ $config: (
 		font-size: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: text,
-			variable-name: text,
+			shorthand: text,
+			variable: text,
 			properties: (font-size),
 			variants: (core.$merged-font-size)
 		)

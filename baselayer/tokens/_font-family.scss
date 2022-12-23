@@ -7,9 +7,8 @@ $config: (
 		font-family: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: font,
-			variable-name: font,
+			shorthand: font,
+			variable: font,
 			properties: (font-family),
 			variants: (core.$merged-font-family)
 		)

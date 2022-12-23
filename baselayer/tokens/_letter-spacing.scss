@@ -7,9 +7,8 @@ $config: (
 		letter-spacing: (
 			important: false,
 			responsive: false,
-			variables: false,
-			utility-name: tracking,
-			variable-name: null,
+			shorthand: tracking,
+			variable: tracking,
 			properties: (letter-spacing),
 			variants: (core.$merged-letter-spacing)
 		)

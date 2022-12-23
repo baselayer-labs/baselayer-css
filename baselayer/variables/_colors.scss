@@ -5,7 +5,7 @@
 $config: (
 	variables: (
 		colors: (
-			variable-name: color,
+			variable: color,
 			variants: (
 				functions.merge(
 					core.$merged-colors,

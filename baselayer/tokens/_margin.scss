@@ -7,9 +7,8 @@ $config: (
 		margin: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin,
-			variable-name: space,
+			shorthand: margin,
+			variable: space,
 			properties: (margin),
 			variants: (
 				functions.merge(
@@ -25,9 +24,8 @@ $config: (
 		margin-top: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-top,
-			variable-name: space,
+			shorthand: margin-top,
+			variable: space,
 			properties: (margin-top),
 			variants: (
 				functions.merge(
@@ -43,9 +41,8 @@ $config: (
 		margin-right: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-right,
-			variable-name: space,
+			shorthand: margin-right,
+			variable: space,
 			properties: (margin-right),
 			variants: (
 				functions.merge(
@@ -61,9 +58,8 @@ $config: (
 		margin-bottom: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-bottom,
-			variable-name: space,
+			shorthand: margin-bottom,
+			variable: space,
 			properties: (margin-bottom),
 			variants: (
 				functions.merge(
@@ -79,9 +75,8 @@ $config: (
 		margin-left: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-left,
-			variable-name: space,
+			shorthand: margin-left,
+			variable: space,
 			properties: (margin-left),
 			variants: (
 				functions.merge(
@@ -97,9 +92,8 @@ $config: (
 		margin-x: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-x,
-			variable-name: space,
+			shorthand: margin-x,
+			variable: space,
 			properties: (margin-right, margin-left),
 			variants: (
 				functions.merge(
@@ -115,9 +109,8 @@ $config: (
 		margin-y: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: margin-y,
-			variable-name: space,
+			shorthand: margin-y,
+			variable: space,
 			properties: (margin-top, margin-bottom),
 			variants: (
 				functions.merge(

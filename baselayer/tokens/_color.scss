@@ -7,9 +7,8 @@ $config: (
 		color: (
 			important: false,
 			responsive: false,
-			variables: true,
-			utility-name: color-text,
-			variable-name: color,
+			shorthand: color-text,
+			variable: color,
 			properties: (color),
 			variants: (
 				functions.merge(
