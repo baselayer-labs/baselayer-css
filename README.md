@@ -135,7 +135,9 @@ Flex handles box alignment and element composition with endless flexibility usin
 
 #### Flow
 
-Flow controls vertical spacing between elements within the container. You can use different values for the `--space` variable to control the spacing between different types of elements or in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing between elements within a smaller container.
+Flow controls vertical spacing between elements within a container. You can use different values for the `--space` variable to control the spacing between different types of elements or in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing between elements within a smaller container.
+
+By using the adjacent sibling combinator `> * + *` we target all child elements except the first one with `margin-top` and get a consistent spacing between the elements within the container.
 
 ```scss
 // Default settings
