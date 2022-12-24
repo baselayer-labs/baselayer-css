@@ -309,7 +309,13 @@ Switch from a single column to a multi column layout when the width of the paren
 ```
 #### Wrap
 
-Wrap and align content with padding.
+Wrap is designed to provide a responsive layout for a container element. 
+
+The width of the container is set to `100%` minus a padding value, which is calculated using the `clamp` function. This ensures that the container takes up the full width of the viewport, minus a fixed amount of space on the left and right sides.
+
+The maximum width of the container is set to `80rem`. This ensures that the container does not become too wide on larger screens.
+
+The container is horizontally centered on the page by setting the `margin-right` and `margin-left` properties to `auto`.
 
 ```scss
 // Default settings
@@ -329,7 +335,11 @@ Wrap and align content with padding.
   <main>...</min>
   <footer>...</footer>
 </div>
+```
 
+You can customize the padding and maximum width values by setting the `--padding` and `--max-width` variables, respectively:
+
+```html
 <!-- Wrap an article to a more readable length -->
 <div class="layout-wrap" style="--max-width: 40rem;">
   <article>...</article>
