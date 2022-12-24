@@ -29,11 +29,11 @@
 
 // Fluid size
 // Clamps a value between an upper and lower bound.
-// @param {Value} $min-value - Min value to clamp from
-// @param {Value} $max-value - Max value to clamp to
-// @param {Value} $min-vw - Start flow from this viewport width
-// @param {Value} $max-vw - Stop flow at this viewport width
-// @return {Value} - Fluid value with upper and lower bound
+// @param {value} $min-value - Min value to clamp from
+// @param {value} $max-value - Max value to clamp to
+// @param {value} $min-vw - Start flow from this viewport width
+// @param {value} $max-vw - Stop flow at this viewport width
+// @return {value} - Fluid value with upper and lower bound
 // -----------------------------------------------------------------------------
 
 @function fluid-size($min-value, $max-value, $min-vw: 30rem, $max-vw: 120rem) {
@@ -89,7 +89,7 @@
 }
 
 // Merge
-// Multiple map merge function
+// Multiple map merge function.
 // -----------------------------------------------------------------------------
 
 @function merge($maps...) {
