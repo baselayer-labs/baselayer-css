@@ -277,7 +277,7 @@ Control how an element is positioned in the DOM and its placement, as well as wh
 
 #### Switch
 
-Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct column width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
+Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct gap width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
 
 ```scss
 // Default settings
