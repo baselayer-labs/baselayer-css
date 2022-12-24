@@ -3,7 +3,7 @@
 
 // -----------------------------------------------------------------------------
 // Flow
-// Flow controls vertical spacing.
+// Flow controls vertical spacing between elements within the container.
 // -----------------------------------------------------------------------------
 
 $space: map.get(core.$compiled-config, layouts, flow, space);
