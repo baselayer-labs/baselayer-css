@@ -309,7 +309,7 @@ Switch from a single column to a multi column layout when the width of the paren
 ```
 #### Wrap
 
-Wrap is designed to provide a responsive layout for a container element. 
+Wrap is designed to provide a responsive wrapping layout for a container element.
 
 The width of the container is set to `100%` minus a padding value, which is calculated using the `clamp` function. This ensures that the container takes up the full width of the viewport, minus a fixed amount of space on the left and right sides.
 
