@@ -133,6 +133,27 @@ Flex handles box alignment and element composition with endless flexibility usin
 </div>
 ```
 
+#### Flow
+
+Flow controls vertical spacing between elements within the container. You can use different values for the `--space` variable to control the spacing between different types of elements or in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing between elements within a smaller container.
+
+```scss
+// Default settings
+.layout-flow {
+  --space: var(--space-large);
+}
+```
+
+```html
+<!-- Set a custom space flow between a set of elements -->
+<div class="layout-flow" style="--space: 1rem;">
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+</div>
+```
+
 #### Frame
 
 Frame makes its child element responsive with a set aspect ratio. Often used for media elements.
@@ -254,7 +275,7 @@ Control how an element is positioned in the DOM and its placement, as well as wh
 
 #### Switch
 
-Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column, you need to define `--col-gap` to get the correct column width.
+Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct column width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
 
 ```scss
 // Default settings
