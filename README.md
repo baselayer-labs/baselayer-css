@@ -140,7 +140,7 @@ Flow controls vertical spacing between elements within a container. You can use 
 By using the adjacent sibling combinator `> * + *` we target all child elements except the first one with `margin-top` and get a consistent spacing between the elements within the container.
 
 ##### Why?
-The purpose of a component is to abstract away complex logic and present a simple, self-contained part of the interface. For that reason, we want to avoid putting margins on the component that bleed out and affect the composition in the surrounding context. Flow helps us with that.
+The purpose of a component is to abstract away complex logic and present a simple, self-contained part of the interface. For that reason, we want to avoid putting margins on the component that bleed out and affect the composition in the surrounding context. Flow helps us with that by setting spacing based on the context.
 
 ```scss
 // Default settings
