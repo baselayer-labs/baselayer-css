@@ -135,9 +135,12 @@ Flex handles box alignment and element composition with endless flexibility usin
 
 #### Flow
 
-Flow controls vertical spacing between elements within a container. You can use different values for the `--space` variable to control the spacing between different types of elements or in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing between elements within a smaller container.
+Flow controls vertical spacing between elements within a container. You can use different values for the `--space` variable to control the spacing between elements in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing.
 
 By using the adjacent sibling combinator `> * + *` we target all child elements except the first one with `margin-top` and get a consistent spacing between the elements within the container.
+
+##### Why?
+The purpose of a component is to abstract away complex logic and present a simple, self-contained part of the interface. For that reason, we want to avoid putting margins on the component that bleed out and affect the composition in the surrounding context. Flow helps us with that.
 
 ```scss
 // Default settings
@@ -277,7 +280,9 @@ Control how an element is positioned in the DOM and its placement, as well as wh
 
 #### Switch
 
-Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct gap width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
+Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. 
+
+When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct gap width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
 
 ```scss
 // Default settings
