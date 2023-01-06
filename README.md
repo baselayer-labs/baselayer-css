@@ -141,7 +141,7 @@ Flow controls vertical spacing between elements within a container. That way we 
 
 | Variable | Default | Options | Breakpoints | Description |
 |---|---|---|---|---|
-| `--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the margin-top property on all child elements except the first one using the adjacent sibling combinator `> * + *`. |
+| `--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the `margin-top` property on all child elements except the first one using the adjacent sibling combinator `> * + *`. |
 
 #### Usage
 
