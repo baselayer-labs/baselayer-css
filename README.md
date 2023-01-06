@@ -135,12 +135,17 @@ Flex handles box alignment and element composition with endless flexibility usin
 
 #### Flow
 
-Flow controls vertical spacing between elements within a container. You can use different values for the `--space` variable to control the spacing between elements in different contexts. For example, you could use a smaller value for the `--space` variable to create tighter spacing.
+Flow controls vertical spacing between elements within a container. That way we avoid the need to set margins directly on components. Instead, we style the context.
 
-By using the adjacent sibling combinator `> * + *` we target all child elements except the first one with `margin-top` and get a consistent spacing between the elements within the container.
+**Class**
 
-##### Why?
-The purpose of a component is to abstract away complex logic and present a simple, self-contained part of the interface. For that reason, we want to avoid putting margins on the component that bleed out and affect the composition in the surrounding context. Flow helps us with that by setting spacing based on the context.
+`.layout-flow`
+
+| Variable | Default | Options | Breakpoints | Description |
+|---|---|---|---|---|
+| `--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the margin-top property on all child elements except the first one using the adjacent sibling combinator `> * + *`. |
+
+**Usage**
 
 ```scss
 // Default settings
