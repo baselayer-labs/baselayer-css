@@ -289,8 +289,8 @@ Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
 `--breakpoint` | `0` | custom (it can be any unit except percentage) | `false` | Set the breakpoint value for when to trigger the layout switch.
 `--cols` | `1` | integer | `false` | Set the number of columns to use when switching to a multi column layout.
-`--gap` | `0rem` | custom (needs a unit so the calculation for the `min-width` does not break) | `false` | Set the `gap` property. The value is also used in a calculation for the `min-width` property used on each column.
-`--col-gap` | `undefined` | custom (needs a unit, if defined, so the calculation for the `min-width` does not break) | `false` | Set the `--col-gap` if you need different values for `column-gap` and `row-gap`. `--col-gap` must be the same as the `column-gap` set in the `gap` shorthand property.
+`--gap` | `0rem` | custom (needs a unit so the calculation for the `min-width` property does not break) | `false` | Set the `gap` property. The value is also used in a calculation for the `min-width` property used on each column.
+`--col-gap` | `undefined` | custom (needs a unit, if defined, so the calculation for the `min-width` property does not break) | `false` | Set the `--col-gap` if you need different values for `column-gap` and `row-gap`. `--col-gap` must be the same as the `column-gap` set in the `gap` shorthand property.
 
 `.layout-switch > *`
 
