@@ -313,24 +313,21 @@ When using different gap values for row and column in `--gap`, you need to defin
 ```
 ### Wrap
 
-Wrap is designed to provide a responsive wrapping layout for a container element.
+Wrap creates a responsive wrapping layout that group, pad and align content with the ability to customize it as needed.
 
-The width of the container is set to `100%` minus a padding value, which is calculated using the `clamp` function. This ensures that the container takes up the full width of the viewport, minus a fixed amount of space on the left and right sides.
+#### Class
 
-The maximum width of the container is set to `80rem`. This ensures that the container does not become too wide on larger screens.
+`.layout-wrap`
 
-The container is horizontally centered on the page by setting the `margin-right` and `margin-left` properties to `auto`.
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--width` | `calc(100% - var(--padding))` | custom | `false` | Set the `width` property. A calc function is used by default to remove the padding from the the width through the `--padding` variable.
+`--max-width` | `80rem` | custom | `false` | Set the `max-width` property.
+`--margin-right` | `auto` | custom | `false` | Set the `object-fit` property.
+`--margin-left` | `auto` | custom | `false` | Set the `spect-ratio` property.
+`--padding` | `clamp(2rem, 10vw, 4rem)` | custom | `false` | Set the padding value to be used in the calc function for the `--width` variable. A clamp function is used by default.
 
-```scss
-// Default settings
-.layout-wrap {
-  --width: calc(100% - var(--padding));
-  --max-width: 80rem;
-  --margin-right: auto;
-  --margin-left: auto;
-  --padding: clamp(2rem, 10vw, 4rem);
-}
-```
+#### Usage
 
 ```html
 <!-- Wrap page content with default settings -->
@@ -339,11 +336,7 @@ The container is horizontally centered on the page by setting the `margin-right`
   <main>...</min>
   <footer>...</footer>
 </div>
-```
 
-You can customize the padding and maximum width values by setting the `--padding` and `--max-width` variables, respectively:
-
-```html
 <!-- Wrap an article to a more readable length -->
 <div class="layout-wrap" style="--max-width: 40rem;">
   <article>...</article>
