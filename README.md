@@ -286,17 +286,17 @@ Switch lets the container space control the behavior of the content by switching
 
 Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
-`--breakpoint` | `0` | custom (it can be any unit except percentage) | `false` | Set the breakpoint value for when to trigger the layout switch.
-`--cols` | `1` | integer | `false` | Set the number of columns to use when switching to a multi column layout.
-`--gap` | `0rem` | custom (needs a unit so the calculation for the `min-width` property does not break) | `false` | Set the `gap` property. The value is also used in a calculation for the `min-width` property used on each column.
-`--col-gap` | `undefined` | custom (needs a unit, if defined, so the calculation for the `min-width` property does not break) | `false` | Set the `--col-gap` if you need different values for `column-gap` and `row-gap`. `--col-gap` must be the same as the `column-gap` set in the `gap` shorthand property.
+`--breakpoint` | `0` | `<length>` value | `false` | Set the breakpoint value for when to trigger the layout switch.
+`--cols` | `1` | `<number>` | `false` | Set the number of columns to use when switching to a multi column layout.
+`--gap` | `0rem` | `<length>` value, `<percentage>` value (needs a unit so the calculation for the `min-width` property does not break) | `false` | Set the `gap` property. The value is also used in a calculation for the `min-width` property used on each column.
+`--col-gap` | `undefined` | `<length>` value, `<percentage>` value (needs a unit, if defined, so the calculation for the `min-width` property does not break) | `false` | Set the `--col-gap` if you need different values for `column-gap` and `row-gap`. `--col-gap` must be the same as the `column-gap` set in the `gap` shorthand property.
 
 `.layout-switch > *`
 
 Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
-`--col` | `var(--cols)` | custom | `false` | Overwrites `--cols` if, for example, you want different sized columns.
-`--grow` | `0` | integer | `false` | Set the `flex-grow` poperty.
+`--col` | `var(--cols)` | `<number>`, | `false` | Overwrites `--cols` if, for example, you want different sized columns.
+`--grow` | `0` | `<integer>` | `false` | Set the `flex-grow` poperty.
 
 #### Usage
 
@@ -323,11 +323,11 @@ Wrap creates a responsive wrapping layout that group, pad and align content with
 
 Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
-`--width` | `calc(100% - var(--padding))` | custom | `false` | Set the `width` property. A calc function is used by default to remove the padding from the the width through the `--padding` variable.
-`--max-width` | `80rem` | custom | `false` | Set the `max-width` property.
-`--margin-right` | `auto` | custom | `false` | Set the `object-fit` property.
-`--margin-left` | `auto` | custom | `false` | Set the `spect-ratio` property.
-`--padding` | `clamp(2rem, 10vw, 4rem)` | custom | `false` | Set the padding value to be used in the calc function for the `--width` variable. A clamp function is used by default.
+`--width` | `calc(100% - var(--padding))` | `<length>` value, `<percentage>` value, `max-content`, `min-content`, `fit-content(20rem)`, `auto` | `false` | Set the `width` property. A calc function is used by default to remove the padding from the the width through the `--padding` variable.
+`--max-width` | `80rem` | `<length>` value, `<percentage>` value, `max-content`, `min-content`, `fit-content(20rem)`, `none` | `false` | Set the `max-width` property.
+`--margin-right` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `object-fit` property.
+`--margin-left` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `spect-ratio` property.
+`--padding` | `clamp(2rem, 10vw, 4rem)` | `<length>` value, `<percentage>` value | `false` | Set the padding value to be used in the calc function for the `--width` variable. A clamp function is used by default.
 
 #### Usage
 
