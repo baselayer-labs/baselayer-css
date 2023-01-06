@@ -139,9 +139,9 @@ Flow controls vertical spacing between elements within a container. That way we 
 
 `.layout-flow`
 
-| Variable | Default | Options | Breakpoints | Description |
-|---|---|---|---|---|
-| `--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the `margin-top` property on all child elements except the first one using the adjacent sibling combinator `> * + *`. |
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the `margin-top` property on all child elements except the first one using the adjacent sibling combinator `> * + *`.
 
 #### Usage
 
@@ -157,17 +157,20 @@ Flow controls vertical spacing between elements within a container. That way we 
 
 ### Frame
 
-Frame makes its child element responsive with a set aspect ratio. Often used for media elements.
+Frame embeds a media object with a fixed aspect ratio and with the option to adjust the focus point and fit behavior.
 
-```scss
-// Default settings
-.layout-frame {
-  --object-x: 50%;
-  --object-y: 50%;
-  --object-fit: cover;
-  --ratio: 1/1;
-}
-```
+#### Class
+
+`.layout-frame`
+
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--object-x` | `50%` | custom | `true` | Set the x-axis value for the `object-position` property.
+`--object-y` | `50%` | custom | `true` | Set the x-axis value for the `object-position` property.
+`--object-fit` | `cover` | `contain`, `cover`, `fill`, `none`, `scale-down` | `true` | Set the `object-fit` property.
+`--ratio` | `1/1` | `width/height` | `true` | Set the `spect-ratio` property.
+
+#### Usage
 
 ```html
 <!-- Display image in 1:1 format -->
