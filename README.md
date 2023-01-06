@@ -145,13 +145,6 @@ Flow controls vertical spacing between elements within a container. That way we 
 
 #### Usage
 
-```scss
-// Default settings
-.layout-flow {
-  --space: var(--space-large);
-}
-```
-
 ```html
 <!-- Set a custom space flow between a set of elements -->
 <div class="layout-flow" style="--space: 1rem;">
