@@ -168,7 +168,7 @@ Variable | Default | Options | Breakpoints | Description
 `--object-x` | `50%` | `<length>` value, `<percentage>` value, `top`, `right`, `bottom`, `left`, `center` | `true` | Set the x-axis value for the `object-position` property.
 `--object-y` | `50%` | `<length>` value, `<percentage>` value, `top`, `right`, `bottom`, `left`, `center` | `true` | Set the y-axis value for the `object-position` property.
 `--object-fit` | `cover` | `contain`, `cover`, `fill`, `none`, `scale-down` | `true` | Set the `object-fit` property.
-`--ratio` | `1/1` | `width/height` | `true` | Set the `spect-ratio` property.
+`--ratio` | `1/1` | `<integer> width/<integer> height` | `true` | Set the `spect-ratio` property.
 
 #### Usage
 
