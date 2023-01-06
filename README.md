@@ -279,36 +279,39 @@ Control how an element is positioned in the DOM and its placement, as well as wh
 
 ### Switch
 
-Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. 
+Switch lets the container space control the behavior of the content by switching from a single column to a multi column layout when the width of the parent element is equal the breakpoint.
 
-When using different gap values for row and column in `--gap`, you need to define `--col-gap` with your column value to get the correct gap width. Otherwise it will stop working and create unwanted gap alternatively unwanted wrapping. 
+#### Class
 
-```scss
-// Default settings
-.layout-switch {
-  --breakpoint: 0;
-  --cols: 1;
-  --gap: 0rem;
-  --multiplier: 9999;
-  --trim: 0.001%;
-}
+`.layout-switch`
 
-.layout-switch > * {
-  --col: var(--cols);
-  --grow: 0;
-  --basis: calc((var(--breakpoint) - 100%) * var(--multiplier));
-  --gap-width: calc(var(--col-gap, var(--gap)) / var(--col));
-  --num-gaps: calc(var(--col) - 1);
-  --min-width: calc(100% / var(--col) - (var(--num-gaps) * var(--gap-width)) - var(--trim));
-}
-```
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--breakpoint` | `0` | custom (it can be any unit except percentage) | `false` | Set the breakpoint value for when to trigger the layout switch.
+`--cols` | `1` | integer | `false` | Set the number of columns to use when switching to a multi column layout.
+`--gap` | `0rem` | custom (needs a unit so the calculation for the `min-width` does not break) | `false` | Set the `gap` property. The value is also used in a calculation for the `min-width` property used on each column.
+`--col-gap` | `undefined` | custom (needs a unit, if defined, so the calculation for the `min-width` does not break) | `false` | Set the `--col-gap` if you need different values for `column-gap` and `row-gap`. `--col-gap` must be the same as the `column-gap` set in the `gap` shorthand property.
+
+`.layout-switch > *`
+
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--col` | `var(--cols)` | custom | `false` | Overwrites `--cols` if, for example, you want different sized columns.
+`--grow` | `0` | integer | `false` | Set the `flex-grow` poperty.
+
+#### Usage
 
 ```html
 <!-- Switch to a multi column layout when the parent width is equal to 40rem -->
-<div class="layout-switch" style="--cols: 3; --breakpoint: 40rem;">
+<div class="layout-switch" style="--cols: 2; --breakpoint: 40rem;">
   <div>...</div>
   <div>...</div>
-  <div>...</div>
+</div>
+
+<!-- Switch to a multi column layout with different sized columns using a twelve column base -->
+<div class="layout-switch" style="--breakpoint: 40rem;">
+  <div style="--col: calc(12/5);">...</div>
+  <div style="--col: calc(12/7);">...</div>
 </div>
 ```
 ### Wrap
