@@ -295,7 +295,7 @@ Variable | Default | Options | Breakpoints | Description
 
 Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
-`--col` | `var(--cols)` | `<number>`, | `false` | Overwrites `--cols` if, for example, you want different sized columns.
+`--col` | `var(--cols)` | `<number>` | `false` | Overwrites `--cols` if, for example, you want different sized columns.
 `--grow` | `0` | `<integer>` | `false` | Set the `flex-grow` poperty.
 
 #### Usage
