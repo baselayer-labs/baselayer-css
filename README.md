@@ -166,7 +166,7 @@ Frame embeds a media object with a fixed aspect ratio and with the option to adj
 Variable | Default | Options | Breakpoints | Description
 ---|---|---|---|---
 `--object-x` | `50%` | custom | `true` | Set the x-axis value for the `object-position` property.
-`--object-y` | `50%` | custom | `true` | Set the x-axis value for the `object-position` property.
+`--object-y` | `50%` | custom | `true` | Set the y-axis value for the `object-position` property.
 `--object-fit` | `cover` | `contain`, `cover`, `fill`, `none`, `scale-down` | `true` | Set the `object-fit` property.
 `--ratio` | `1/1` | `width/height` | `true` | Set the `spect-ratio` property.
 
