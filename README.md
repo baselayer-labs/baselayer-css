@@ -247,33 +247,32 @@ Build responsive grid systems with total layout freedom using one single class a
 
 ### Pin
 
-Control how an element is positioned in the DOM and its placement, as well as which z-index layer to use.
+Pin controls how an element is positioned in the DOM, the placement of positioned elements and the stack order of the z-layer.
 
-```scss
-// Default settings
-.layout-pin {
-  --position: static;
-  --top: auto;
-  --right: auto;
-  --bottom: auto;
-  --left: auto;
-  --z-index: 1;
-}
-```
+#### Class
+
+`.layout-pin`
+
+Variable | Default | Options | Breakpoints | Description
+---|---|---|---|---
+`--position` | `static` | `static`, `relative`, `absolute`, `fixed`, `sticky` | `false` | Set the `position` property.
+`--top` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `top` property.
+`--right` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `right` property.
+`--bottom` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `bottom` property.
+`--left` | `auto` | `<length>` value, `<percentage>` value, `auto` | `false` | Set the `left` property.
+`--z-index` | `auto` | `<integer>`, `auto` | `false` | Set the `z-index` property.
+
+#### Usage
 
 ```html
 <!-- Make an element sticky -->
 <div class="layout-pin" style="--position: sticky; --top: 0; --z-index: 200;">
   <div>...</div>
-  <div>...</div>
-  <div>...</div>
 </div>
 
-<!-- Make an element full size relative to its closest parent with relative position -->
+<!-- Make an element full size relative to its closest parent -->
 <div class="layout-pin" style="--position: relative;">
   <div class="layout-pin" style="--position: absolute; --top: 0; --right: 0; --bottom: 0; --left: 0;">...</div>
-  <div>...</div>
-  <div>...</div>
 </div>
 ```
 
