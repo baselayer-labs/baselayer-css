@@ -76,11 +76,9 @@ Clone Baselayer CSS to the desired directory in your project. Remember that the 
 
 Will be updated soon.
 
-## Documentation
+## Layouts
 
-### Layouts
-
-#### Flex
+### Flex
 
 Flex handles box alignment and element composition with endless flexibility using one single class and custom properties.
 
@@ -133,11 +131,11 @@ Flex handles box alignment and element composition with endless flexibility usin
 </div>
 ```
 
-#### Flow
+### Flow
 
 Flow controls vertical spacing between elements within a container. That way we avoid the need to set margins directly on components. Instead, we style the context.
 
-**Class**
+#### Class
 
 `.layout-flow`
 
@@ -145,7 +143,7 @@ Flow controls vertical spacing between elements within a container. That way we 
 |---|---|---|---|---|
 | `--space` | `var(--space-medium)` | custom | `false` | Set the value for the `--space` variable, which is used to set the margin-top property on all child elements except the first one using the adjacent sibling combinator `> * + *`. |
 
-**Usage**
+#### Usage
 
 ```scss
 // Default settings
@@ -164,7 +162,7 @@ Flow controls vertical spacing between elements within a container. That way we 
 </div>
 ```
 
-#### Frame
+### Frame
 
 Frame makes its child element responsive with a set aspect ratio. Often used for media elements.
 
@@ -200,7 +198,7 @@ Frame makes its child element responsive with a set aspect ratio. Often used for
 </div>
 ```
 
-#### Grid
+### Grid
 
 Build responsive grid systems with total layout freedom using one single class and custom properties.
 
@@ -251,7 +249,7 @@ Build responsive grid systems with total layout freedom using one single class a
 </div>
 ```
 
-#### Pin
+### Pin
 
 Control how an element is positioned in the DOM and its placement, as well as which z-index layer to use.
 
@@ -283,7 +281,7 @@ Control how an element is positioned in the DOM and its placement, as well as wh
 </div>
 ```
 
-#### Switch
+### Switch
 
 Switch from a single column to a multi column layout when the width of the parent element is equal the breakpoint. 
 
@@ -317,7 +315,7 @@ When using different gap values for row and column in `--gap`, you need to defin
   <div>...</div>
 </div>
 ```
-#### Wrap
+### Wrap
 
 Wrap is designed to provide a responsive wrapping layout for a container element.
 
@@ -361,10 +359,10 @@ You can customize the padding and maximum width values by setting the `--padding
 </div>
 ```
 
-### Design Tokens
+## Design Tokens
 
 Will be updated soon.
 
-### Functions
+## Functions
 
 Will be updated soon.
